@@ -13,9 +13,12 @@ config = {
 
 firebase = pyrebase.initialize_app(config)
 
+db = firebase.database()
+
+#db.child("name").child("name").update({"name":"Paulu"})
 
 
-from flask iport Flask
+from flask import Flask
 
 app = Flask(__name__)
 
