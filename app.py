@@ -39,17 +39,17 @@ def basic():
 #if __name__ == '__main__':
   # app.run(debug=true)
 
-  
+if __name__ == '_main_':
+  app.run(host='0.0.0.0', port='8080')
 
-        
-@app.route('/')
-def home():
-  return "<h1> Welcome to the World of Flask Application Framework</h1>"
+@app.route('/show')
+def show():
+  print("/show route reached")
+  return "Show page content"
 
-@app.route('/about')
-def about():
-  return "<h1> All about the Page</h1> 
-          "<p> This Application was build under Flask Framework </p>"
+@app.route('/test')
+def test():
+  return "Test Page"
 
 if __name__=="__main__";
   app.run(debug=True)
