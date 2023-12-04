@@ -44,6 +44,6 @@ if __name__ == '_main_':
 @app.route('/show')
 def show():
   
-  
+   return render_template('show.html')
 
 
