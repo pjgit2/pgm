@@ -44,12 +44,7 @@ if __name__ == '_main_':
 
 @app.route('/show')
 def show():
-  print("/show route reached")
-  return "Show page content"
+  
+  return render_template('show.html')
 
-@app.route('/test')
-def test():
-  return "Test Page"
 
-if __name__=="__main__";
-  app.run(debug=True)
