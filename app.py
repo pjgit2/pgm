@@ -17,8 +17,8 @@ db = firebase.database()
 
 #db.child("name").child("name").update({"name":"Paulu"})
 
-
-from flask import Flask
+from flask import *
+from flask import Flask, render_template,request,redirect
 
 app = Flask(__name__)
 
