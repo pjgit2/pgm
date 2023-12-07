@@ -34,6 +34,8 @@ def basic():
 
 @app.route('/show')
 def show():
+   print("/show route reached")
+   return render.template('show.html')
 
 if __name__ == '_main_':
   app.run(host='0.0.0.0', port='8080')
