@@ -35,8 +35,8 @@ def basic():
             return render_template('index.html')
         return render.template('index.html')
 
-#if __name__ == '__main__':
-  # app.run(debug=true)
+@app.route('/show')
+def show():
 
 if __name__ == '_main_':
   app.run(host='0.0.0.0', port='8080')
