@@ -28,7 +28,7 @@ def basic():
             to = todo.val()
             return render_template('index.html',t=to.values())
         elif request.form['submit'] == 'delete':
-            name =  request.form['name']
+            name =  request.form['name']   #updated
             db.child("todo").remove(name)
             return render_template('index.html')
         return render.template('index.html')
