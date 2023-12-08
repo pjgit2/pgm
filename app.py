@@ -31,7 +31,7 @@ def show():
    return render_template('show.html')
 
 if __name__ == '_main_':
-  app.run(host='0.0.0.0', port='8080')
+  app.run(debug=True)
 
 
 
