@@ -20,9 +20,11 @@ app = Flask(__name__)
 
 @app.route('/', methods=['GET', 'POST'])
 def start():
-   if request.method == 'GET':
+   if request.method == 'POST':
+      name = request.form.get("name")
       email = request.form.get("email")
-    
+      phone = request.form.get("phone")
+      subject = request.form.get("subject")
 
 @app.route('/show')
 def show():
