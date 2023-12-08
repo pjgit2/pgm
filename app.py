@@ -32,8 +32,8 @@ def start():
          "subject": subject,
          "message": message,
       }
-      db.child('data').POST(data)
-      return redirect("/")
+      db.child('data').POST(data);
+      return redirect('/')
 
 @app.route('/form')
 def show():
