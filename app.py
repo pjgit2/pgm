@@ -27,10 +27,11 @@ def start():
       message = request.form.get("message")
 
       data = {
-         "name": name;
-         "Email": email;
-         "Subject": subject;
-         "Message": message;
+         "name": name,
+         "email": email,
+         "subject": subject,
+         "message": message,
+
       }
 
 @app.route('/show')
