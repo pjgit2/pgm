@@ -34,9 +34,9 @@ def start():
 
       }
 
-@app.route('/show')
+@app.route('/form')
 def show():
-   return render_template('show.html')
+   return render_template('form.html')
 
 if __name__ == '_main_':
   app.run(debug=True)
