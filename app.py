@@ -33,8 +33,8 @@ def start():
          "message": message,
       }
 
-      data = db.child("data").get()
-      to = data.val
+      db.child("data").push(data)
+      return redirect('/')
 
 @app.route('/form')
 def show():
