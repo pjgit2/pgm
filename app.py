@@ -23,8 +23,8 @@ def start():
    if request.method == 'POST':
       name = request.form.get("name")
       email = request.form.get("email")
-      phone = request.form.get("phone")
       subject = request.form.get("subject")
+      message = request.form.get("message")
 
 @app.route('/show')
 def show():
