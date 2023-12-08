@@ -20,8 +20,8 @@ app = Flask(__name__)
 
 @app.route('/', methods=['GET', 'POST'])
 def start():
-   if request.method = 'GET':
-        email = request.form.get("email");
+   if request.method == 'GET':
+      email = request.form.get("email")
     
 
 @app.route('/show')
