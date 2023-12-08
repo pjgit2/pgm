@@ -19,19 +19,8 @@ db = firebase.database()
 app = Flask(__name__)
 
 @app.route('/', methods=['GET', 'POST'])
-def basic():
-    if request.method == 'POST':
-        if request.form['submit'] == 'add':
-            name =  request.form['name']
-            db.child("todo").push(name)
-            todo = db.child("todo").get()
-            to = todo.val()
-            return render_template('index.html',t=to.values())
-        elif request.form['submit'] == 'delete':
-            name =  request.form['name']   #updated
-            db.child("todo").remove(name)
-            return render_template('index.html')
-        return render.template('index.html')
+def start():
+    
 
 @app.route('/show')
 def show():
