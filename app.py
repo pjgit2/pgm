@@ -26,6 +26,13 @@ def start():
       subject = request.form.get("subject")
       message = request.form.get("message")
 
+      data = {
+         "name": name;
+         "Email": email;
+         "Subject": subject;
+         "Message": message;
+      }
+
 @app.route('/show')
 def show():
    return render_template('show.html')
