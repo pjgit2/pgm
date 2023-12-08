@@ -35,6 +35,8 @@ def start():
 
       db.child("data").push(data)
       return redirect('/')
+   
+   data_list = db.child("data").post().val()
 
 @app.route('/form')
 def show():
