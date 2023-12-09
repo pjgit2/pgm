@@ -38,10 +38,6 @@ def start():
    
    data_list = db.child("data").post().val()
 
-@app.route('/form')
-def show():
-   return render_template('form.html')
-
 if __name__ == '_main_':
   app.run(debug=True)
 
