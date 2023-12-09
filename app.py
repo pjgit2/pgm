@@ -36,7 +36,8 @@ def start():
       db.child("data").push(data)
       return redirect('/')
    
-   data_list = db.child("data").post().val()
+   data_list = db.child("data").get().val()
+   return render_template('index.html', data=data_list)
 
 if __name__ == '_main_':
   app.run(debug=True)
