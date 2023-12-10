@@ -1,5 +1,5 @@
-from flask import Flask, render_template, request, redirect, session
 import pyrebase
+from flask import Flask, render_template, request
 
 config = {
   "apiKey": "AIzaSyCv4mI1d_S63C00yn_OPQiX8qwPQHQl_oc",
@@ -13,22 +13,11 @@ config = {
 }
 
 firebase = pyrebase.initialize_app(config)
+
 db = firebase.database()
 
 app = Flask(__name__)
 
-@app.route("/")
-def home():
-   all_entries = db.child("data").get()
-   return render_template("index.html",)
-
-@app.route("/admin")
-def admin():
-  if 'user' in session:
-    all_entries = db.child("data").get()
-    return render_template("admin.html",all_entries)
-  return redirect('/login')
-  
 @app.route('/admin', methods=['GET', 'POST'])
 def form():
    if request.method == 'POST':
@@ -50,25 +39,12 @@ def form():
    data_list = db.child("data").get().val()
    return render_template('admin.html', data=data_list)
 
-@app.route('/update/<string:key>', methods=['GET', 'POST'])
-def update(key):
-    if request.method == 'POST':
-        name = request.form.get("name")
-        email = request.form.get("email")
-        subject = request.form.get("subject")
-        status = request.form.get("status")
-        actions = request.form.get("actions")
 
-        updated_data = {
-            "name": name,
-            "email": email,
-            "subject": subject,
-            "status": status,
-            "actions": actions
-        }
+   @app.route("/signin", methods=['GET', 'POST'])
+   def signup():
+      if request.method == 'GET':
+         db.child("data").push(newdata)
 
-        db.child("data").child(key).update(updated_data)
-        return redirect('/admin')
 
 if __name__ == '_main_':
   app.run(debug=True)
