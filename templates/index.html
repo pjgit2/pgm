@@ -33,31 +33,7 @@
 	</div>
   </nav>
 
-    <!--Jumbotron container is added here with to execute add and delete task -->   
-    <div class="jumbotron">
-        <form class="form-group" action="/" method="post">
-            <label for="name">Enter all the tasks to be performed in execution</label>
-            <input type="text" name="name" class="form-control"><br>
-            <button class="btn btn-primary" type="submit" name="submit" value="add">Submit</button>
-            <button class="btn btn-danger" type="submit" name="submit" value="delete">Delete</button>
-        </form>
-    </div>
-<!--Navigation Link for reterviewing data from backend and to showcast records -->
-    <li class="nav-item active">
-        <a class="nav-link" style="margin-right: 400px; color:maroon" href="/show">SHOW RECORDS</a>
-    </li>
-
-<!--Created the container for displaying records using the loop -->
-
-    <div class="container-fluid">
-    {% for l in t %}
-        <ul class="list-group">
-            <li class="list-group-item">
-                {{l}}
-            </li>
-        </ul>
-    {% endfor %}
-
+    
   
 </body>
 </html>
