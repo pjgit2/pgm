@@ -18,6 +18,13 @@ db = firebase.database()
 
 app = Flask(__name__)
 
+@app.route("/admin")
+def admin():
+  if 'user' in session:
+    all_entries = db.child("data").get()
+    return render_template("admin.html",all_entries)
+  return redirect('/login')
+
 @app.route('/admin', methods=['GET', 'POST'])
 def form():
    if request.method == 'POST':
