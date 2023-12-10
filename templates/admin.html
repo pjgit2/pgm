@@ -41,6 +41,12 @@
                 <th scope="col">Message</th>
             </tr>
         </thead>
+        <tbody class="table-group-divider">
+            {% for entry_key, entry_data in all_entries.items() %}
+            <tr>
+                <td>{{entry_data.get('name','N/A)}}</td>
+            </tr>
+        </tbody>
         
 
     </table>
