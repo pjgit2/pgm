@@ -38,6 +38,26 @@ def form():
    data_list = db.child("data").get().val()
    return render_template('admin.html', data=data_list)
 
+@app.route('/update/<string:key>', methods=['GET', 'POST'])
+def update(key):
+    if request.method == 'POST':
+        name = request.form.get("name")
+        email = request.form.get("email")
+        subject = request.form.get("subject")
+        status = request.form.get("status")
+        actions = request.form.get("actions")
+
+        updated_data = {
+            "name": name,
+            "email": email,
+            "subject": subject,
+            "status": status,
+            "actions": actions
+        }
+
+        db.child("data").child(key).update(updated_data)
+        return redirect('/admin')
+
 if __name__ == '_main_':
   app.run(debug=True)
 
