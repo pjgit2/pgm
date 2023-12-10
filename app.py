@@ -18,7 +18,7 @@ db = firebase.database()
 
 app = Flask(__name__)
 
-@app.route('/', methods=['GET', 'POST'])
+@app.route('/admin', methods=['GET', 'POST'])
 def start():
    if request.method == 'POST':
       name = request.form.get("name")
@@ -34,10 +34,10 @@ def start():
       }
 
       db.child("data").push(data)
-      return redirect('/')
+      return redirect('/form')
    
    data_list = db.child("data").get().val()
-   return render_template('index.html', data=data_list)
+   return render_template('form.html', data=data_list)
 
 if __name__ == '_main_':
   app.run(debug=True)
