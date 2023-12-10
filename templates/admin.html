@@ -45,7 +45,11 @@
             {% for entry_key, entry_data in all_entries.items() %}
             <tr>
                 <td>{{entry_data.get('name','N/A)}}</td>
+                <td>{{entry_data.get('email','N/A)}}</td>
+                <td>{{entry_data.get('subject','N/A)}}</td>
+                <td>{{entry_data.get('message','N/A)}}</td>
             </tr>
+            {% endfor %}
         </tbody>
         
 
