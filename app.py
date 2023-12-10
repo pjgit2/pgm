@@ -40,11 +40,14 @@ def form():
    return render_template('admin.html', data=data_list)
 
 
-   @app.route("/signin", methods=['GET', 'POST'])
-   def signup():
-      if request.method == 'GET':
-         db.child("data").push(newdata)
+   @app.route("/login", methods=['GET', 'POST'])
+   def login():
+      if request.method == 'POST':
+         session.pop("user", none)
 
+         if request.form.get("password") == 'password':
+            session['User'] = request.form.get("newuser")
+            return redirect("/user")
 
 if __name__ == '_main_':
   app.run(debug=True)
