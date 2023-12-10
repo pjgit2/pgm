@@ -4,7 +4,13 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Admin Panel</title>
     <script>
-        function searchEntries(){}
+        function searchEntries(){
+            var input,filter,table,tr ;
+            input = document.getElementById("searchInput");
+            filter = input.value.toUpperCase();
+            table = document.getElementById("entriesTable");
+            tr = table.getElementByTagName("tr");
+        }
     </script>
 </head>
 <body>
