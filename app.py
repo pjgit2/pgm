@@ -19,6 +19,7 @@ app = Flask(__name__)
 
 @app.route("/")
 def home():
+   all_entries = db.child("data").get()
    return render_template("index.html",)
 
 @app.route('/admin', methods=['GET', 'POST'])
