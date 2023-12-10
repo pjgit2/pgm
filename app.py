@@ -1,5 +1,5 @@
+from flask import Flask, render_template, request, redirect, session
 import pyrebase
-from flask import Flask, render_template, request
 
 config = {
   "apiKey": "AIzaSyCv4mI1d_S63C00yn_OPQiX8qwPQHQl_oc",
@@ -13,7 +13,6 @@ config = {
 }
 
 firebase = pyrebase.initialize_app(config)
-
 db = firebase.database()
 
 app = Flask(__name__)
