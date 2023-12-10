@@ -22,6 +22,10 @@ def home():
    all_entries = db.child("data").get()
    return render_template("index.html",)
 
+@app.route("/admin")
+def admin():
+  
+
 @app.route('/admin', methods=['GET', 'POST'])
 def form():
    if request.method == 'POST':
