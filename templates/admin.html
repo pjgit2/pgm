@@ -30,5 +30,19 @@
     <a href="\">Home</a>
     <label for="searchInput">Search:</label>
     <input type="text" id="searchInput" onkeyup="searchEntries()" placeholder="Type to search">
+
+    {%if all_entries%}
+    <table class="table table-dark table-hover" id="entriesTable">
+        <thead>
+            <tr>
+                <th scope="col">Name</th>
+                <th scope="col">Email</th>
+                <th scope="col">Subject</th>
+                <th scope="col">Message</th>
+            </tr>
+        </thead>
+        
+
+    </table>
 </body>
 </html>
