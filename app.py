@@ -22,7 +22,7 @@ app = Flask(__name__)
 def admin():
   if 'user' in session:
     all_entries = db.child("data").get()
-    return render_template("admin.html",all_entries)
+    return render_template("admin.html",all_entries=all_entries.val())
   return redirect('/login')
 
 @app.route('/admin', methods=['GET', 'POST'])
