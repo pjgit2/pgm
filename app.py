@@ -50,11 +50,13 @@ def form():
    @app.route("/login", methods=['GET', 'POST'])
    def login():
       if request.method == 'POST':
-         session.pop("user", none)
+         session.pop("user", None)
 
-         if request.form.get("password") == 'password':
-            session['User'] = request.form.get("newuser")
-            return redirect("/user")
+         if request.form.get("pass") == 'password' and request.form.get("uname") == "mbsa":
+   
+         if 'user' in session:
+            return redirect("/admin")
+         return render_template("login.html")
 
 if __name__ == '_main_':
   app.run(debug=True)
