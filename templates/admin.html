@@ -87,6 +87,14 @@
                 <td>{{ item.email }}</td>
                 <td>{{ item.subject }}</td>
                 <td>{{ item.message }}</td>
+                <td>
+                    <a href="{{ url_for('edit', item_id=item_key) }}">
+                        <input type="submit" class="btn btn-sm btn-success" value="Edit"
+                    </a>
+                    <a href="{{ url_for('delete', item_id=item_key) }}">
+                        <input type="submit" class="btn btn-sm btn-success" value="Delete"
+                    </a>
+                </td>
             </tr>
             {% endfor %}
         </tbody>
