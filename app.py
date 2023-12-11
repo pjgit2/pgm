@@ -26,8 +26,8 @@ def home():
 @app.route("/admin")
 def admin():
   if 'user' in session:
-    all_entries = db.child("data").get()
-    return render_template("admin.html",all_entries=all_entries.val())
+    data = db.child("items").get().val() or {}
+    return render_template("admin.html",data=data)
   return redirect('/login')
 
 @app.route('/admin', methods=['GET', 'POST'])
