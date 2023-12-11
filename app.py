@@ -38,11 +38,11 @@ def form():
       subject = request.form.get("subject")
       message = request.form.get("message")
 
-      data = {
+      new_item = {
          "name": name,
-         "student id": student id,
+         "email": email,
          "subject": subject,
-         "task": task,
+         "message": message,
       }
 
       db.child("items").push(new_item)
