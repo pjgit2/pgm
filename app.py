@@ -42,7 +42,7 @@ if request.form.get("pass") == 'password' and request.form.get("uname") == "mbsa
             return redirect("/admin")
     if 'user' in session:
         return redirect("/admin")
-    return render_template("/login")
+    return render_template("/login.html")
 
 @app.route('/admin', methods=['GET', 'POST'])
 def form():
