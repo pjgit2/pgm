@@ -35,9 +35,9 @@ def form():
 
       data = {
          "name": name,
-         "email": email,
+         "student id": student id,
          "subject": subject,
-         "message": message,
+         "task": task,
       }
 
       db.child("data").push(data)
