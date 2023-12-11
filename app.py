@@ -20,7 +20,9 @@ app = Flask(__name__)
 
 @app.route("/")
 def home():
-   data = db.child('items')
+   data = db.child('items').get().val or {}
+   return render_template('index.html', data=data)
+
 @app.route("/admin")
 def admin():
   if 'user' in session:
