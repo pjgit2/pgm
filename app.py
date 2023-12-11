@@ -32,6 +32,11 @@ def admin():
     return render_template("admin.html",data=data)
   return redirect('/login')
 
+@app.route("/login" ,methods=['GET','POST'])
+def login():
+    if request.method == 'POST':
+        session.pop("user",None)
+
 @app.route('/admin', methods=['GET', 'POST'])
 def form():
    if request.method == 'POST':
