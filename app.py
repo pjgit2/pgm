@@ -64,6 +64,29 @@ def form():
             return redirect("/admin")
          return render_template("login.html")
 
+@app.route('/edit/<item_id>', methods=['GET', 'POST'])
+def edit(item_id):
+    if request.method == 'GET':
+        item = db.child('items').child(item_id).get().val() or {}
+        return render_template('edit.html', item=item)
+
+    elif request.method == 'POST':
+        name = request.form.get("name")
+        email = request.form.get("email")
+        subject = request.form.get("subject")
+        message = request.form.get("message")
+
+        updated_item = {
+            "name": name,
+            "email": email,
+            "subject": subject,
+            "message": message
+        }
+        
+        db.child('items').child(item_id).update(updated_item)
+
+        return redirect(url_for('admin'))
+
 if __name__ == '_main_':
   app.run(debug=True)
 
