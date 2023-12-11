@@ -37,6 +37,13 @@ def login():
     if request.method == 'POST':
         session.pop("user",None)
 
+if request.form.get("pass") == 'password' and request.form.get("uname") == "mbsa":
+            session['user'] = request.form.get("uname") 
+            return redirect("/admin")
+    if 'user' in session:
+        return redirect("/admin")
+    return render_template("/login")
+
 @app.route('/admin', methods=['GET', 'POST'])
 def form():
    if request.method == 'POST':
