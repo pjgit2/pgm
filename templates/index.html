@@ -48,7 +48,7 @@
         <tr>
             <td>{{ item.name }}</td>
             <td>{{ item.email }}</td>
-            <td>{{ entry_data.get('subject', 'N/A') }}</td>
+            <td>{{ item.subject }}</td>
             <td>{{ entry_data.get('message', 'N/A') }}</td>
         </tr>
         {% endfor %}
