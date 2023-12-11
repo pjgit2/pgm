@@ -45,7 +45,7 @@ def form():
          "task": task,
       }
 
-      db.child("items").push(data)
+      db.child("items").push(new_item)
       return redirect('/admin')
    
    data_list = db.child("items").get().val()
