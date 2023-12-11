@@ -6,9 +6,12 @@
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css" integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous">
     <link rel="stylesheet" href="css/bootstrap.min.css">
     <link rel="stylesheet" href="css/style.css"
+    <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.0.0/dist/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
+
     <script>
         function searchEntries(){
-            var input,filter,table,tr ;
+            var input,filter,table,tr,td,i,txtValue ;
             input = document.getElementById("searchInput");
             filter = input.value.toUpperCase();
             table = document.getElementById("entriesTable");
@@ -30,9 +33,18 @@
     </script>
 </head>
 <body>
-    <a href="\">Home</a>
-    <label for="searchInput">Search:</label>
-    <input type="text" id="searchInput" onkeyup="searchEntries()" placeholder="Type to search">
+    <nav class="navbar navbar-expand-lg navbar-dark bg-secondary">
+
+    </nav>
+    
+    <input 
+    type="text" 
+    id="searchInput" 
+    class="form-control"
+    onkeyup="searchEntries()" 
+    placeholder="Search By Name..."
+    style="width: 40%;"
+    />
 
     {%if all_entries%}
     <table class="table table-dark table-hover" id="entriesTable">
