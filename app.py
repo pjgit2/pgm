@@ -47,6 +47,8 @@ if request.form.get("pass") == 'password' and request.form.get("uname") == "mbsa
 
 @app.route('/logout')
 def logout():
+    session.pop("user",None)
+    return redirect("/")
 
 @app.route('/admin', methods=['GET', 'POST'])
 def form():
