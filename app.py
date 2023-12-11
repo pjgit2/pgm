@@ -17,7 +17,9 @@ firebase = pyrebase.initialize_app(config)
 db = firebase.database()
 
 app = Flask(__name__)
-[g, session][app.secret_key = "dgsgsfgggedg"]
+
+app.secret_key = "dgsgsfgggedg"
+
 @app.route("/")
 def home():
    data = db.child('items').get().val or {}
