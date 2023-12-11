@@ -43,10 +43,10 @@ def form():
          "task": task,
       }
 
-      db.child("data").push(data)
+      db.child("items").push(data)
       return redirect('/admin')
    
-   data_list = db.child("data").get().val()
+   data_list = db.child("items").get().val()
    return render_template('admin.html', data=data_list)
 
 
