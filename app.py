@@ -18,6 +18,8 @@ db = firebase.database()
 
 app = Flask(__name__)
 
+@app.route("/")
+
 @app.route("/admin")
 def admin():
   if 'user' in session:
