@@ -71,18 +71,6 @@ def form():
    return render_template('admin.html', data=data_list)
 
 
-   @app.route("/login", methods=['GET', 'POST'])
-   def login():
-      if request.method == 'POST':
-         session.pop("user", None)
-
-         if request.form.get("pass") == 'password' and request.form.get("uname") == "mbsa":
-            session['user'] = request.form.get('uname')
-            return redirect("/admin")
-         if 'user' in session:
-            return redirect("/admin")
-         return render_template("login.html")
-
 @app.route('/edit/<item_id>', methods=['GET', 'POST'])
 def edit(item_id):
     if request.method == 'GET':
