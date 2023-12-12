@@ -59,6 +59,9 @@ def form():
       time = request.form.get("time")
       status = request.form.get("status")
 
+      datetime_str = f"{date} {time}"
+      datetime_obj = datetime.strptime(datetime_str, "%Y-%m-%d %H:%M")
+
       new_item = {
          "name": name,
          "email": email,
