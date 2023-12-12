@@ -89,6 +89,7 @@ def edit(item_id):
         doctor = request.form.get("doctor")
         message = request.form.get("message")
         status = request.form.get("status")
+        current_datetime = datetime.now().strftime('%Y-%m-%d %H:%M:%S')
         updated_item = {
             "name": name,
             "email": email,
