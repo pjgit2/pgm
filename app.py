@@ -64,9 +64,10 @@ def form():
 
       new_item = {
          "name": name,
-         "email": email,
-         "subject": subject,
-         "message": message,
+         "admission": admission,
+         "task": task,
+         "datetime": datetime_obj.strftime("%Y-%m-%d %H:%M"),
+         "status": status
       }
 
       db.child("items").push(new_item)
