@@ -92,9 +92,11 @@ def edit(item_id):
         current_datetime = datetime.now().strftime('%Y-%m-%d %H:%M:%S')
         updated_item = {
             "name": name,
-            "email": email,
-            "subject": subject,
-            "message": message
+            "operationtheatre": operationtheatre,
+            "doctor": doctor,
+            "message": message,
+            "status": status,
+            "current_datetime": current_datetime,
         }
         
         db.child('items').child(item_id).update(updated_item)
