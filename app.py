@@ -81,7 +81,8 @@ def edit(item_id):
 
     elif request.method == 'POST':
         name = request.form.get("name")
-        
+        operationtheatre = request.form.get("name")
+        dcotor = request.form.get("name")
         message = request.form.get("message")
 
         updated_item = {
