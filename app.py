@@ -86,14 +86,14 @@ def edit(item_id):
     elif request.method == 'POST':
         name = request.form.get("name")
         operationtheatre = request.form.get("operationtheatre")
-        doctor = request.form.get("doctor")
+        doctorassigned = request.form.get("doctorassigned")
         message = request.form.get("message")
         status = request.form.get("status")
         current_datetime = datetime.now().strftime('%Y-%m-%d %H:%M:%S')
         updated_item = {
             "name": name,
             "operationtheatre": operationtheatre,
-            "doctor": doctor,
+            "doctorassigned": doctorassigned,
             "message": message,
             "status": status,
             "current_datetime": current_datetime,
