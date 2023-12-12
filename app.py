@@ -53,9 +53,11 @@ def logout():
 def form():
    if request.method == 'POST':
       name = request.form.get("name")
-      email = request.form.get("email")
-      subject = request.form.get("subject")
-      message = request.form.get("message")
+      admission = request.form.get("admission")
+      task = request.form.get("task")
+      date = request.form.get("date")
+      time = request.form.get("time")
+      status = request.form.get("status")
 
       new_item = {
          "name": name,
