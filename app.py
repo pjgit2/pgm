@@ -84,7 +84,7 @@ def edit(item_id):
         operationtheatre = request.form.get("operationtheatre")
         doctor = request.form.get("doctor")
         message = request.form.get("message")
-
+        status = request.form.get("status")
         updated_item = {
             "name": name,
             "email": email,
