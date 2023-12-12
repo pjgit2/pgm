@@ -73,6 +73,7 @@ def form():
    return render_template('admin.html', data=data_list)
 
 @app.route('/delete/<item_id')
+def delete(item_id):
 
 @app.route('/edit/<item_id>', methods=['GET', 'POST'])
 def edit(item_id):
