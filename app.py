@@ -75,6 +75,7 @@ def form():
 @app.route('/delete/<item_id')
 def delete(item_id):
    db.child('items').child(item_id).remove()
+   return redirect(url_for('admin'))
 
 @app.route('/edit/<item_id>', methods=['GET', 'POST'])
 def edit(item_id):
