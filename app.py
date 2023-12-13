@@ -30,9 +30,9 @@ def home():
 @app.route("/admin")
 def admin():
   if 'user' in session:
-    data = db.child("items").get().val() or {}
-    return render_template("admin.html",data=data)
-  return redirect('/login')
+    data = db.child('items').get().val() or {}
+    return render_template('admin.html',data=data)
+  return redirect("/login")
 
 @app.route("/login" ,methods=['GET','POST'])
 def login():
