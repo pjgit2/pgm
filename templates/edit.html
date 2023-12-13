@@ -6,8 +6,7 @@
       <meta charset="UTF-8">
       <meta http-equiv="X-UA-Compatible" content="IE=edge">
       <meta name="viewport" content="width=device-width, initial-scale=1.0">
-
-      <title> Edit  </title>
+      <title> UPDATE WINDOW </title>
       <style>
         body {
         background: #ecf0f3;
@@ -17,7 +16,7 @@
   <body>
   
   <div class="container mt-5">
-        <h1>Edit Window</h1>
+        <h1> UPDATE WINDOW</h1>
     
         <form method="post">
             <div class="form-group">
@@ -30,7 +29,10 @@ div class="form-group">
     <select name="operationtheatre" class="form-control" required>
         <option value="EMERGENCY" {% if item.operationtheatre == 'Emergency' %}selected{% endif %}>Emergency</option>
         <option value="GENERAL" {% if item.operationtheatre == 'General' %}selected{% endif %}>General</option>
-       
+        <option value="ICU" {% if item.operationtheatre == 'ICU' %}selected{% endif %}>ICU</option>
+        <option value="OT 1" {% if item.operationtheatre == 'OT1' %}selected{% endif %}>OT 1</option>
+        <option value="OT 2" {% if item.operationtheatre == 'OT2' %}selected{% endif %}>OT 2</option>
+        <option value="SPECIAL ROOM" {% if item.operationtheatre == 'SpecialRoom' %}selected{% endif %}>Special Room</option>
     </select>
 </div>
            <div class="form-group">
