@@ -18,7 +18,6 @@ firebase = pyrebase.initialize_app(config)
 db = firebase.database()
 
 app = Flask(__name__)
-
 app.secret_key = "dgsgsfgggedg"
 
 @app.route("/")
@@ -49,6 +48,8 @@ def login():
 def logout():
     session.pop("user",None)
     return redirect("/")
+
+
 
 @app.route('/admin', methods=['GET', 'POST'])
 def form():
