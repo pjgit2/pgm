@@ -33,11 +33,11 @@ div class="form-group">
        
     </select>
 </div>
-          
- <div class="form-group">
-                <label for="name">Message:</label>
-                <input type="text" message="messge" class="form-control" value="{{ item.message }}" required>
-            </div>
+           <div class="form-group">
+                <label for="doctorassigned">Assigned Doctor:</label>
+                <select name="doctorassigned" class="form-control" required>
+                    <option value="Dr. Sage" {% if item.doctorassigned == 'Dr. Sage' %}selected{% endif %}>Dr. Sage</option>
+
           
     <button type="submit" class="btn btn-primary">Submit</button>
         </form>
