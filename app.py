@@ -13,7 +13,6 @@ config = {
     "measurementId": "G-BPWDCB06B7"
 }
 
-
 firebase = pyrebase.initialize_app(config)
 
 db = firebase.database()
@@ -31,7 +30,7 @@ def home():
 def admin():
   if 'user' in session:
     data = db.child('items').get().val() or {}
-    return render_template('admin.html',data=data)
+    return render_template('admin.html', data=data)
   return redirect("/login")
 
 @app.route("/login" ,methods=['GET','POST'])
@@ -116,8 +115,8 @@ def edit(item_id):
 
         return redirect(url_for('admin'))
 
-if __name__ == '_main_':
-  app.run(debug=True, host='0.0.0.0', port=8000)
+if __name__ == '__main__':
+    app.run(debug=True, host='0.0.0.0', port=8000)
 
 
 
