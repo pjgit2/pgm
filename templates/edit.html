@@ -13,8 +13,7 @@
     }
       </style>
 </head>
-  <body>
-  
+  <body>  
   <div class="container mt-5">
         <h1> UPDATE WINDOW</h1>
     
@@ -35,6 +34,8 @@ div class="form-group">
         <option value="SPECIAL ROOM" {% if item.operationtheatre == 'SpecialRoom' %}selected{% endif %}>Special Room</option>
     </select>
 </div>
+
+        
            <div class="form-group">
                 <label for="doctorassigned">Assigned Doctor:</label>
                 <select name="doctorassigned" class="form-control" required>
@@ -70,6 +71,7 @@ div class="form-group">
 
 <script>
       document.getElementById('date').valueAsDate = new Date();
+      
       var currentTime = new Date();
         var hours = currentTime.getHours();
        var minutes = currentTime.getMinutes();
@@ -79,10 +81,7 @@ div class="form-group">
         timeInput.value = formattedTime;
         timeInput.name = 'time';
         timeInput.className = 'form-control';
-        document.getElementById('submissionForm').appendChild(timeInput);
-      
-
-      
+        document.getElementById('submissionForm').appendChild(timeInput);            
 </script>        
 </body>
 </html>
