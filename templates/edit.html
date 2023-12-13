@@ -17,6 +17,15 @@
                 <input type="text" name="name" class="form-control" value="{{ item.name }}" required>
             </div>
 
+div class="form-group">
+    <label for="dept">section:</label>
+    <select name="operationtheatre" class="form-control" required>
+        <option value="Section 1" {% if item.operationtheatre == 'Section 1' %}selected{% endif %}>Section 1</option>
+        <option value="Section 2" {% if item.operationtheatre == 'Section 2' %}selected{% endif %}>Section 2</option>
+       
+    </select>
+</div>
+          
  <div class="form-group">
                 <label for="name">Message:</label>
                 <input type="text" message="messge" class="form-control" value="{{ item.message }}" required>
