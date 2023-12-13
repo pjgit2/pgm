@@ -82,16 +82,17 @@
                 <th scope="col">Assigned Doctor</th>
                 <th scope="col">Date and Time</th>
                 <th scope="col">Status</th>
-                <th scope="col">action</th>
+                <th scope="col">Action</th>
             </tr>
         </thead>
         <tbody class="table-group-divider">
             {% for item_key, item in data.items() %}
             <tr>
                 <td>{{ item.name }}</td>
-                <td>{{ item.email }}</td>
-                <td>{{ item.subject }}</td>
-                <td>{{ item.message }}</td>
+                <td>{{ item.operationtheatre }}</td>
+                <td>{{ item.doctorassigned }}</td>
+                <td>{{ item.datetime }}</td>
+                <td>{{ item.status }}</td>
                 <td>
                     <a href="{{ url_for('edit', item_id=item_key) }}">
                         <input type="submit" class="btn btn-sm btn-success" value="Edit"
