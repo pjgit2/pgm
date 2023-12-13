@@ -87,9 +87,10 @@ body{
         {% for item_key, item in data.items() %}
         <tr>
             <td>{{ item.name }}</td>
-            <td>{{ item.email }}</td>
-            <td>{{ item.subject }}</td>
-            <td>{{ item.message }}</td>
+            <td>{{ item.operationtheatre }}</td>
+            <td>{{ item.doctorassigned }}</td>
+            <td>{{ item.datetime }}</td>
+            <td>{{ item.status }}</td>
         </tr>
         {% endfor %}
     </tbody>
