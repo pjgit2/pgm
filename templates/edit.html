@@ -37,7 +37,10 @@ div class="form-group">
                 <label for="doctorassigned">Assigned Doctor:</label>
                 <select name="doctorassigned" class="form-control" required>
                     <option value="Dr. Sage" {% if item.doctorassigned == 'Dr. Sage' %}selected{% endif %}>Dr. Sage</option>
-
+                    <option value="Dr. Smith" {% if item.doctorassigned == 'Dr. Smith' %}selected{% endif %}>Dr. Smith</option>
+                   
+                </select>
+            </div>
           
     <button type="submit" class="btn btn-primary">Submit</button>
         </form>
