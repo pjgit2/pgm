@@ -23,7 +23,7 @@ app.secret_key = "dgsgsfgggedg"
 
 @app.route("/")
 def home():
-   data = db.child('items').get().val or {}
+   data = db.child('items').get().val() or {}
    return render_template('index.html', data=data)
 
 
