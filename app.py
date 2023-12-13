@@ -23,7 +23,8 @@ app.secret_key = "dgsgsfgggedg"
 @app.route("/")
 def home():
    data = db.child('items').get().val() or {}
-   return render_template('index.html', data=data)
+   doctors = set(item["doctorassigned"] for item in data.values())
+   return render_template('index.html', data=data, doctors=doctors)
 
 
 @app.route("/admin")
