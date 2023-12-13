@@ -25,6 +25,7 @@ def home():
    data = db.child('items').get().val or {}
    return render_template('index.html', data=data)
 
+
 @app.route("/admin")
 def admin():
   if 'user' in session:
@@ -55,7 +56,7 @@ def logout():
 def form():
    if request.method == 'POST':
       name = request.form.get("name")
-      admission = request.form.get("admission")
+      operationtheatre = request.form.get("operationtheatre")
       task = request.form.get("task")
       date = request.form.get("date")
       time = request.form.get("time")
