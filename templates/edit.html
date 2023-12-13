@@ -26,10 +26,10 @@
             </div>
 
 div class="form-group">
-    <label for="dept">section:</label>
+    <label for="operationtheatre">Department:</label>
     <select name="operationtheatre" class="form-control" required>
-        <option value="Milk" {% if item.operationtheatre == 'Milk' %}selected{% endif %}>Milk</option>
-        <option value="Bread" {% if item.operationtheatre == 'Bread' %}selected{% endif %}>Bread</option>
+        <option value="EMERGENCY" {% if item.operationtheatre == 'Emergency' %}selected{% endif %}>Emergency</option>
+        <option value="GENERAL" {% if item.operationtheatre == 'General' %}selected{% endif %}>General</option>
        
     </select>
 </div>
