@@ -37,6 +37,7 @@ def admin():
 def login():
     if request.method == 'POST':
         session.pop("user",None)
+      
         if request.form.get("pass") == 'password' and request.form.get("uname") == "mbsa":
             session['user'] = request.form.get("uname") 
             return redirect("/admin")
@@ -51,7 +52,6 @@ def logout():
     return redirect("/")
 
 
-
 @app.route('/admin', methods=['GET', 'POST'])
 def form():
    if request.method == 'POST':
@@ -61,6 +61,7 @@ def form():
       date = request.form.get("date")
       time = request.form.get("time")
       status = request.form.get("status")
+     
 
       datetime_str = f"{date} {time}"
       datetime_obj = datetime.strptime(datetime_str, "%Y-%m-%d %H:%M")
@@ -79,10 +80,12 @@ def form():
    data_list = db.child("items").get().val()
    return render_template('admin.html', data=data_list)
 
-@app.route('/delete/<item_id')
+@app.route('/delete/<item_id>')
 def delete(item_id):
+  
    db.child('items').child(item_id).remove()
    return redirect(url_for('admin'))
+
 
 @app.route('/edit/<item_id>', methods=['GET', 'POST'])
 def edit(item_id):
@@ -96,6 +99,8 @@ def edit(item_id):
         doctorassigned = request.form.get("doctorassigned")
         message = request.form.get("message")
         status = request.form.get("status")
+
+      
         current_datetime = datetime.now().strftime('%Y-%m-%d %H:%M:%S')
         updated_item = {
             "name": name,
@@ -111,7 +116,7 @@ def edit(item_id):
         return redirect(url_for('admin'))
 
 if __name__ == '_main_':
-  app.run(debug=True)
+  app.run(debug=True, host='0.0.0.0', port=8000)
 
 
 
