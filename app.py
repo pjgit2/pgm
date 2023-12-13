@@ -44,7 +44,7 @@ def login():
             return redirect("/admin")
     if 'user' in session:
         return redirect("/admin")
-    return render_template("/login.html")
+    return render_template("login.html")
 
 
 @app.route('/logout')
