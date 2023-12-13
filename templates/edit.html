@@ -40,9 +40,18 @@ div class="form-group">
                     <option value="Dr. Smith" {% if item.doctorassigned == 'Dr. Smith' %}selected{% endif %}>Dr. Smith</option>
                 </select>
             </div>
+        
         <div class="form-group">
                 <label for="datetime">Date and Time:</label>
                 <input type="text" name="datetime" class="form-control" value="{{ item.datetime | default(current_datetime) }}">
+            </div>
+
+        <div class="form-group">
+                <label for="status">Status:</label>
+                <select name="status" class="form-control" required>
+                    <option value="Pending Medical Reports" {% if item.status == 'Pending Medical Reports' %}selected{% endif %}>Pending Medical Reports</option>
+                    <option value="Pending Samples" {% if item.status == 'Pending Samples' %}selected{% endif %}>Pending Samples</option>
+                </select>
             </div>
           
     <button type="submit" class="btn btn-primary">Submit</button>
