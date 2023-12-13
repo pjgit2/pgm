@@ -35,13 +35,13 @@
         body {
             background: #ecf0f3
         }
-        
+
     </style>
 </head>
 <body>
     <nav class="navbar navbar-expand-lg navbar-dark bg-secondary">
         <div class="container-fluid">
-            <a class="navbar-brand" href="\">TODO</a>
+            <a class="navbar-brand" href="\">MED | CARE</a>
             <button
                 class="navbar-toggler"
                 type="button"
@@ -49,8 +49,7 @@
                 data-bs-target="#navbarNav"
                 aria-controls="navbarNav"
                 aria-expanded="false"
-                aria-label="Toggle navigation"
-            >
+                aria-label="Toggle navigation">
             <span class="navbar-toggler-icon"></span>
             </button>
             <div class="collapse navbar-collapse" id="navbarNav">
@@ -66,15 +65,9 @@
         </div>
     </nav>
     <br/> <br/>
+
+    <input style="text-align: center;" type="text" id="searchInput" class="form-control" onkeyup="searchEntries()" placeholder="Search by Name...">
     
-    <input 
-    type="text" 
-    id="searchInput" 
-    class="form-control"
-    onkeyup="searchEntries()" 
-    placeholder="Search By Name..."
-    style="width: 40%;"
-    />
 
     {%if data %}
     <table class="table table-dark table-hover" id="entriesTable">
