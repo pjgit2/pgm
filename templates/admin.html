@@ -14,21 +14,22 @@
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.0.0/dist/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
     <script>
         function searchEntries() {
-      var input,filter,table,tr,td,i,txtValue ;
-      input = document.getElementById("searchInput");
-      filter = input.value.toUpperCase();
-      table = document.getElementById("entriesTable");
-      tr = table.getElementsByTagName("tr");
-
-            
-            for (i=0;i<tr.length;i++) {
-                td = tr[i].getElementByTagName("td")[0];
-                
+    
+            var input, filter, table, tr, td, i, txtValue;
+            input = document.getElementById("searchInput");
+            filter = input.value.toUpperCase();
+            table = document.getElementById("entriesTable");
+            tr = table.getElementsByTagName("tr");
+    
+           
+            for (i = 0; i < tr.length; i++) {
+                td = tr[i].getElementsByTagName("td")[0]; 
+    
                 if (td) {
                     txtValue = td.textContent || td.innerText;
                     if (txtValue.toUpperCase().indexOf(filter) > -1) {
-                        tr[i].style.display="";
-                    } else{
+                        tr[i].style.display = "";
+                    } else {
                         tr[i].style.display = "none";
                     }
                 }
@@ -70,25 +71,15 @@
     </nav>
     <br> <br>
 
-    <input
-  style="text-align: center;"
-  type="text" 
-  id="searchInput" 
-  class="form-control"
-  onkeyup="searchEntries()" 
-  placeholder="Search By Name..."
-  style="width: 40%;"
-  />
-
-
+    <input style="text-align: center;" type="text" id="searchInput" class="form-control" onkeyup="searchEntries()" placeholder="Search by Name...">
     <div class="d-flex justify-content-center mt-4">
         <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#exampleModalLong">
             New Assignment
         </button>
     </div>
-<br>
+</br>
 
-    {% if data %}
+    {%if data %}
     <table class="table table-hover" id="entriesTable">
         <thead class="thead thead-dark">
             <tr>
@@ -153,9 +144,9 @@
                     <label for="doctorassigned">Assigned Doctor</label>
                     <select name="doctorassigned" class="form-control" id="doctorassigned" required>
                         <option value="Dr. Amir">Dr. Amir</option>
-                        <option value="Dr. Sage">Dr. Sage</option>
-                        <option value="Dr. Joseph">Dr. Joseph</option>
-                        <option value="Dr. Mestry">Dr. Mestry</option>
+                        <option value="Dr. Sage">Dr. Smith</option>
+                        <option value="Dr. Joseph">Dr. Johnson</option>
+                        <option value="Dr. Mestry">Dr. Williams</option>
                     </select>
                   
                 </div>
@@ -181,7 +172,7 @@
                     var currentTime = new Date();
                     var hours = currentTime.getHours();
                     var minutes = currentTime.getMinutes();
-                    var formattedTime = hours + ':' + (minutes < 10 ? '0' : '') + minutes;
+                    var formattedTime = hours + ':' +(minutes < 10 ? '0' : '') + minutes;
                     var timeInput = document.createElement('input');
                     timeInput.type = 'time';
                     timeInput.value = formattedTime;
