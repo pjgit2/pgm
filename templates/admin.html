@@ -94,12 +94,8 @@
                 <td>{{ item.datetime }}</td>
                 <td>{{ item.status }}</td>
                 <td>
-                    <a href="{{ url_for('edit', item_id=item_key) }}">
-                        <input type="submit" class="btn btn-sm btn-success" value="Edit"
-                    </a>
-                    <a href="{{ url_for('delete', item_id=item_key) }}">
-                        <input type="submit" class="btn btn-sm btn-success" value="Delete"
-                    </a>
+                    <a href="{{ url_for('edit', item_id=item_key) }}" class="btn btn-sm btn-success">Update</a>
+                    <a href="{{ url_for('delete', item_id=item_key) }}" class="btn btn-sm btn-danger">Delete</a>
                 </td>
             </tr>
             {% endfor %}
