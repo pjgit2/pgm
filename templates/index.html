@@ -79,7 +79,8 @@ body{
   <select id="doctorFilter" class="form-control" onchange="filterByDoctor()"
   <option value="All">All Doctors</option>
   {% for doctor in doctors %}
-  
+  <option value="{{doctor}}">{{doctor}}</option>
+  {% endfor %}
   </div>
 
 {% if data %}
