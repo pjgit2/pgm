@@ -109,7 +109,7 @@ def edit(item_id):
             "doctorassigned": doctorassigned,
             "message": message,
             "status": status,
-            "datetime": current_datetime,
+            "datetime": current_datetime
         }
         
         db.child('items').child(item_id).update(updated_item)
