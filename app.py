@@ -57,7 +57,7 @@ def form():
    if request.method == 'POST':
       name = request.form.get("name")
       operationtheatre = request.form.get("operationtheatre")
-      task = request.form.get("task")
+      doctorassigned = request.form.get("doctorassigned")
       date = request.form.get("date")
       time = request.form.get("time")
       status = request.form.get("status")
@@ -67,8 +67,8 @@ def form():
 
       new_item = {
          "name": name,
-         "admission": admission,
-         "task": task,
+         "operationtheatre": operationtheatre,
+         "doctorassigned": doctorassigned,
          "datetime": datetime_obj.strftime("%Y-%m-%d %H:%M"),
          "status": status
       }
