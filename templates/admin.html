@@ -165,6 +165,12 @@
                     var currentTime = new Date();
                     var hours = currentTime.getHours();
                     var minutes = currentTime.getMinutes();
+                    var formattedTime = hours + ':' +(minutes < 10 ? '0' : '') + minutes;
+                    var timeInput = document.createElement('input');
+                    timeInput.type = 'time';
+                    timeInput.value = formattedTime;
+                    timeInput.name = 'time';
+                    timeInput.className = 'form-control';
                 </script>
 
 
