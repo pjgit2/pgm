@@ -12,40 +12,7 @@
     <title>Home Page</title>
     <link rel="stylesheet" href="css/bootstrap.min.css">
 
-<script>
-  function searchEntries() {
-      var input,filter,table,tr,td,i,txtValue ;
-      input = document.getElementById("searchInput");
-      filter = input.value.toUpperCase();
-      table = document.getElementById("entriesTable");
-      tr = table.getElementsByTagName("tr");
 
-      for (i=0;i<tr.length;i++) {
-          td = tr[i].getElementsByTagName("td")[0];
-          if(td) {
-              txtValue = td.textContent || td.innerText;
-              if (txtValue.toUpperCase().indexOf(filter) > -1) {
-                  tr[i].style.display = "";
-              }
-              else{
-                  tr[i].style.display = "none";
-              }
-          }
-      };
-  }
-
-  function filterByDoctor(){
-    var doctorName = document.getElementById("doctorFilter").value;
-    var table = document.getElementById("entriesTable");
-    var rows = table.getElementsByTagName("tr");
-
-    for (var i=0;i<rows.length;i++) {
-      var doctorCell = rows[i].getElementsByTagName("td")[2];
-      var display = (doctorName === "All"||doctorCell.innerHTML === doctorName)?"":"none";
-      rows[i].style.display = display;
-    }
-  }
-</script>
 <style>
 body{
   background: #ecf0e3;
@@ -87,41 +54,77 @@ body{
   />
 
   <div class="container">
-  <h3 style="text-align: center;">Filter</h3><br>
-  <select id="doctorFilter" class="form-control" onchange="filterByDoctor()"
-  <option value="All">All Doctors</option>
-  {% for doctor in doctors %}
-  <option value="{{doctor}}">{{doctor}}</option>
-  {% endfor %}
-  </select>
-  </div>
+    <h3 style="text-align: center;">Filter</h3><br>
+    <select id="doctorFilter" class="form-control" onchange="filterByDoctor()">
+        <option value="All">All Doctors</option>
+        {% for doctor in doctors %}
+            <option value="{{ doctor }}">{{ doctor }}</option>
+        {% endfor %}
+    </select>
+</div>
   <br>
 
-{% if data %}
-<table class="table table-hover" id="entriesTable">
-    <thead class="thead thead-dark">
-        <tr>
-            <th scope="col">Patient Name</th>
-            <th scope="col">Rooms & Ward</th>
-            <th scope="col">Assigned Doctor</th>
-            <th scope="col">Date and Time</th>
-            <th scope="col">Status</th>
-        </tr>
-    </thead>
-    <tbody class="table-group-divider">
-        {% for item_key, item in data.items() %}
-        <tr>
-            <td>{{ item.name }}</td>
-            <td>{{ item.operationtheatre }}</td>
-            <td>{{ item.doctorassigned }}</td>
-            <td>{{ item.datetime }}</td>
-            <td>{{ item.status }}</td>
-        </tr>
-        {% endfor %}
-    </tbody>
-</table>
+  {% if data %}
+
+  <table class="table table-hover "  id="entriesTable">
+      <thead class="thead thead-dark ">
+          <tr>
+              <th scope="col">Patient Name</th>
+              <th scope="col">Rooms & Ward</th>
+              <th scope="col">Assigned Doctor</th>
+              <th scope="col">Date and Time</th>
+              <th scope="col">Status</th>
+          </tr>
+      </thead>
+      <tbody class="table-group-divider">
+          {% for item_key, item in data.items() %}
+              <tr>
+                  <td>{{ item.name }}</td>
+                  <td>{{ item.operationtheatre }}</td>
+                  <td>{{ item.doctorassigned }}</td>
+                  <td>{{ item.datetime }}</td>  
+                  <td>{{ item.status }}</td>
+              </tr>
+          {% endfor %}
+      </tbody>
+  </table>
+  
   {% else %}
   <p>No entries available</p>
   {% endif %}
+  <script>
+    function searchEntries() {
+        var input,filter,table,tr,td,i,txtValue ;
+        input = document.getElementById("searchInput");
+        filter = input.value.toUpperCase();
+        table = document.getElementById("entriesTable");
+        tr = table.getElementsByTagName("tr");
+  
+        for (i=0;i<tr.length;i++) {
+            td = tr[i].getElementsByTagName("td")[0];
+            if(td) {
+                txtValue = td.textContent || td.innerText;
+                if (txtValue.toUpperCase().indexOf(filter) > -1) {
+                    tr[i].style.display = "";
+                }
+                else{
+                    tr[i].style.display = "none";
+                }
+            }
+        };
+    }
+  
+    function filterByDoctor() {
+              var doctorName = document.getElementById("doctorFilter").value;
+              var table = document.getElementById("entriesTable");
+              var rows = table.getElementsByTagName("tr");
+  
+              for (var i = 1; i < rows.length; i++) {
+                  var doctorCell = rows[i].getElementsByTagName("td")[2];  // Column index for Assigned Doctor
+                  var display = (doctorName === "All" || doctorCell.innerHTML === doctorName) ? "" : "none";
+                  rows[i].style.display = display;
+              }
+          }
+  </script>
 </body>
 </html>
