@@ -75,11 +75,13 @@ div class="form-group">
        var minutes = currentTime.getMinutes();
         var formattedTime = hours + ':' + (minutes < 10 ? '0' : '') + minutes;
         var timeInput = document.createElement('input');
-        timeInput.type = 'datetime';
+        timeInput.type = 'time';
         timeInput.value = formattedTime;
+        timeInput.name = 'time';
         timeInput.className = 'form-control';
         document.getElementById('submissionForm').appendChild(timeInput);
       
+
       
 </script>        
 </body>
